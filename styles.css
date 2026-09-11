@@ -23,6 +23,7 @@ body {
 }
 button, a { font: inherit; }
 button { color: inherit; }
+[hidden] { display: none !important; }
 .site-shell { min-height: 100vh; padding: 28px 36px 26px; background: radial-gradient(circle at 68% 42%, #1c2d3b 0, #0d1724 34%, #090f18 76%); }
 .topbar { display: flex; align-items: center; justify-content: space-between; max-width: 1480px; margin: 0 auto 22px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; }

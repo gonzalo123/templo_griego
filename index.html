@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b111b" />
+    <meta name="description" content="Visor 3D interactivo de un templo griego clásico." />
+    <meta property="og:title" content="Templo griego · Visor 3D" />
+    <meta property="og:description" content="Explora un templo griego clásico construido en Blender." />
+    <meta property="og:type" content="website" />
+    <title>Templo griego · Visor 3D</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Templo griego, inicio">
+          <span class="brand-symbol" aria-hidden="true">Δ</span>
+          <span class="brand-copy"><strong>ARCHAIA</strong><small>estudio visual</small></span>
+        </a>
+        <div class="topbar-meta"><span class="status-dot"></span><span>VISOR INTERACTIVO</span><span class="meta-divider"></span><span>GLB / 01</span></div>
+      </header>
+
+      <main class="viewer-layout">
+        <section class="viewer-card" aria-label="Visor 3D del templo griego">
+          <div class="viewer-stage">
+            <canvas id="scene" aria-label="Modelo 3D navegable del templo griego"></canvas>
+            <div class="stage-noise" aria-hidden="true"></div>
+            <div class="model-tag"><span class="tag-line"></span><span>templo_griego.glb</span></div>
+            <div class="stage-tip"><span class="mouse-icon" aria-hidden="true">◌</span><span>Arrastra para orbitar · rueda para acercar</span></div>
+            <div id="loading" class="loading-state" role="status" aria-live="polite">
+              <span class="loader-ring" aria-hidden="true"></span>
+              <span id="loading-label">Cargando modelo</span>
+            </div>
+            <div id="error" class="error-state" role="alert" hidden>
+              <strong>No se pudo cargar el modelo</strong>
+              <span>Comprueba que <code>templo_griego.glb</code> esté junto a esta página.</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="info-panel">
+          <div class="eyebrow"><span class="eyebrow-rule"></span>ESTUDIO CLÁSICO · 001</div>
+          <h1>Templo<br /><em>griego</em></h1>
+          <p class="intro">Una interpretación esquemática de la arquitectura clásica: proporción, ritmo y geometría reunidos en un solo volumen.</p>
+
+          <div class="rule"></div>
+          <div class="facts" aria-label="Características del modelo">
+            <div class="fact"><strong>03</strong><span>escalones<br />elevados</span></div>
+            <div class="fact"><strong>07</strong><span>columnas<br />frontales</span></div>
+            <div class="fact"><strong>02</strong><span>aguas<br />del tejado</span></div>
+          </div>
+
+          <div class="control-block">
+            <div class="control-heading"><span>Explorar</span><span class="control-key">CONTROLES</span></div>
+            <div class="view-buttons" role="group" aria-label="Vistas del modelo">
+              <button class="view-button is-active" data-view="hero"><span>01</span><strong>Presentación</strong><i>↗</i></button>
+              <button class="view-button" data-view="front"><span>02</span><strong>Frontal</strong><i>↗</i></button>
+              <button class="view-button" data-view="top"><span>03</span><strong>Superior</strong><i>↗</i></button>
+            </div>
+            <div class="tool-row">
+              <button id="reset-view" class="tool-button"><span aria-hidden="true">↺</span>Reiniciar vista</button>
+              <button id="auto-rotate" class="tool-button toggle-button" aria-pressed="false"><span class="toggle-dot" aria-hidden="true"></span>Auto-rotación</button>
+            </div>
+          </div>
+
+          <div class="panel-footer"><span>BLENDER → GLB</span><span class="footer-mark">✦</span><span>ARQUITECTURA DIGITAL</span></div>
+        </aside>
+      </main>
+    </div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
